@@ -9,6 +9,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Data
+@AllArgsConstructor
 public class CreateUserDto {
     private String username;
     private String email;
@@ -19,8 +20,8 @@ public class CreateUserDto {
         return new User(
                 UUID.randomUUID(),
                 this.username,
-                this.email,
                 this.password,
+                this.email,
                 Instant.now(),
                 null
         );
